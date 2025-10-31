@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="gi.css">
+    <title>Document</title>
+</head>
+
+<div class="container">
+      <h1>TODO LIST</h1>
+
+      <div class="top-controls">
+        <div class="search">
+          <input type="text" placeholder="Search note..." />
+          <img class="lupa" src="lupa.svg" alt="Search" />
+        </div>
+        <button class="ALL">ALL</button>
+        <button class="luna">
+          <img src="moon.svg" alt="Dark mode" />
+        </button>
+      </div>
+
+      <div class="tasks">
+        <div class="marker">
+          <input type="checkbox" id="note1" />
+          <label for="note1">NOTE #1</label>
+        </div>
+
+        <div class="marker">
+          <input type="checkbox" id="note2" checked />
+          <label for="note2" class="done">NOTE #2</label>
+        </div>
+
+        <div class="marker">
+          <input type="checkbox" id="note3" />
+          <label for="note3">NOTE #3</label>
+        </div>
+      </div>
+
+      <button class="add">+</button>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+
+</html>
