@@ -55,7 +55,7 @@ h1 {
   width: 18px;
 }
 
-.ALL {
+.all {
   background-color: #7b61ff;
   color: white;
   border: none;
@@ -139,8 +139,15 @@ body.dark .marker {
   border-top: 1px solid #6c63ff;
 }
 
-body.dark .ALL,
+body.dark .all,
 body.dark .luna,
 body.dark .add {
   background-color: #9a85ff;
+}
+
+.black-body{
+  background-color: black;
+}
+.white-text {
+ color: white; 
 }

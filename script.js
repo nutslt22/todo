@@ -1,38 +1,23 @@
-function renderTasks(filter = "all") {
-  document.querySelectorAll(".marker").forEach((el) => el.remove());
+function toggleTheme() {
+    const themeButton = document.getElementById("button-luna"); 
+    const body = document.body;
+    const title = document.querySelector("h1");
+    const notes = document.querySelectorAll(".marker label"); 
+    const searchInput = document.querySelector(".search input"); 
 
-  let filteredTasks = tasks.filter((task) => {
-    if (filter === "active") return !task.done;
-    if (filter === "completed") return task.done;
-    return true;
-  });
+    themeButton.addEventListener("click", function() {
+        
+        body.classList.toggle("black-body");
+        title.classList.toggle("white-text");
 
-  filteredTasks.forEach((task, index) => {
-    const taskDiv = document.createElement("div");
-    taskDiv.classList.add("marker");
-    taskDiv.innerHTML = `
-      <input type="checkbox" id="task-${index}" ${task.done ? "checked" : ""}>
-      <label for="task-${index}" class="${task.done ? "done" : ""}">${task.text}</label>
-      <button class="delete">✕</button>
-    `;
-    container.insertBefore(taskDiv, addBtn);
-  });
+        notes.forEach(note => {
+            note.classList.toggle("white-text");
+        });
 
-  container.addEventListener("change", (event) => {
-    if (event.target.matches(".marker input")) {
-      const checkbox = event.target;
-      const taskIndex = Array.from(container.querySelectorAll(".marker")).indexOf(checkbox.closest(".marker"));
-      tasks[taskIndex].done = checkbox.checked;
-      renderTasks(currentFilter);
-    }
-  });
-
-  container.addEventListener("click", (event) => {
-    if (event.target.matches(".delete")) {
-      const btn = event.target;
-      const taskIndex = Array.from(container.querySelectorAll(".marker")).indexOf(btn.closest(".marker"));
-      tasks.splice(taskIndex, 1);
-      renderTasks(currentFilter);
-    }
-  });
+        searchInput.classList.toggle("black-body");
+        searchInput.classList.toggle("white-text");
+    });
 }
+
+
+toggleTheme();
