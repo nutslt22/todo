@@ -6,18 +6,15 @@ function toggleTheme() {
     const searchInput = document.querySelector(".search input"); 
 
     themeButton.addEventListener("click", function() {
-        
-        body.classList.toggle("black-body");
+        body.classList.toggle("dark");
         title.classList.toggle("white-text");
-
         notes.forEach(note => {
             note.classList.toggle("white-text");
         });
 
-        searchInput.classList.toggle("black-body");
         searchInput.classList.toggle("white-text");
+        searchInput.classList.toggle("search-dark");
     });
 }
-
 
 toggleTheme();

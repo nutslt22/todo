@@ -15,6 +15,7 @@ body {
   border-radius: 15px;
   padding: 50px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease; 
 }
 
 h1 {
@@ -42,6 +43,7 @@ h1 {
   border: 1px solid #6c63ff;
   border-radius: 6px;
   color: #6c63ff;
+  transition: border-color 0.3s ease;
 }
 
 .search input::placeholder {
@@ -50,18 +52,23 @@ h1 {
 
 .lupa {
   position: absolute;
-  right: 10px;
+  right: 1px;
   top: 9px;
   width: 18px;
 }
 
-.all {
-  background-color: #7b61ff;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  padding: 10px 20px;
-  cursor: pointer;
+.filter {
+    padding: 10px;
+    border: 1px solid #6c63ff;
+    border-radius: 6px;
+    cursor: pointer;
+    background-color: #fff;
+    color: #6c63ff;
+}
+
+body.dark .filter {
+    background-color: #3a3a50;
+    color: white; 
 }
 
 .luna {
@@ -90,6 +97,7 @@ h1 {
   justify-content: space-between;
   border-top: 1px solid #c3c1e5;
   padding: 10px 0;
+  transition: border-color 0.3s ease;
 }
 
 .marker input[type="checkbox"] {
@@ -150,4 +158,46 @@ body.dark .add {
 }
 .white-text {
  color: white; 
+}
+body.dark {
+    background-color: #1e1e2e;
+    color: #eee;
+}
+
+body.dark .container {
+    background-color: #2a2a3d;
+    border-color: #3a3a50;
+}
+
+body.dark .marker {
+    border-top: 1px solid #6c63ff;
+}
+
+body.dark .all,
+body.dark .luna,
+body.dark .add {
+    background-color: #9a85ff; 
+    color: white; 
+}
+
+body.dark .search input {
+    background-color: #3a3a50; 
+    color: white; 
+}
+
+body.dark .search input::placeholder {
+    color: #b3b3b3; 
+}
+
+.white-text {
+    color: white;
+}
+
+
+body.dark .marker label {
+    color: #d3d3d3;
+}
+
+body.dark .done {
+    color: #6c63ff; 
 }
